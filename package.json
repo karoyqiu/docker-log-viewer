@@ -2,7 +2,7 @@
   "name": "docker-log-viewer",
   "private": true,
   "scripts": {
-    "start": "meteor run --port 0.0.0.0:2080 --exclude-archs web.browser.legacy",
+    "start": "meteor run --port 192.168.0.104:2080 --exclude-archs web.browser.legacy",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "visualize": "meteor --production --extra-packages bundle-visualizer"
