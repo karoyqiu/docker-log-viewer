@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export const Hello = () => {
+export function Hello() {
   const [counter, setCounter] = useState(0);
 
   const increment = () => {
@@ -13,4 +13,4 @@ export const Hello = () => {
       <p>You've pressed the button {counter} times.</p>
     </div>
   );
-};
+}
