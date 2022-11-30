@@ -1,1 +1,11 @@
 node_modules/
+
+# yarn with ZeroInstalls
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+yarn-error.log
