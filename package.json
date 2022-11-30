@@ -26,5 +26,6 @@
       "server": "server/main.ts"
     },
     "testModule": "tests/main.ts"
-  }
+  },
+  "version": "0.0.0"
 }
