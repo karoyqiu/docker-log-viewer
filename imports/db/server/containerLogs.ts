@@ -20,7 +20,6 @@ Meteor.publish(CONTAINERLOGS_COLLECTION, async function (containerId: string) {
     const buffer = await container.logs({
       stdout: true,
       stderr: true,
-      details: true,
       tail: 100,
       timestamps: true,
     });

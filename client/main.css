@@ -7,6 +7,12 @@
 @import '/css/roboto-mono/500.css';
 @import '/css/roboto-mono/700.css';
 
+html,
+body,
+#app {
+  height: 100%
+}
+
 code {
   font-family: 'Roboto Mono', 'Consolas', 'Courier New', Courier, monospace;
 }

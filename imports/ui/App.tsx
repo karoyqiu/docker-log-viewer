@@ -1,11 +1,15 @@
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
+import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
+import Stack from '@mui/material/Stack';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import TextField from '@mui/material/TextField';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import React from 'react';
 import ContainerList from './ContainerList';
 import ContainerLogTable from './ContainerLogTable';
+import LogFilters from './LogFilters';
 
 const drawerWidth = 240;
 
@@ -22,7 +26,7 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: 'flex' }}>
+      <Box sx={{ display: 'flex', height: '100%' }}>
         <CssBaseline />
         <Drawer
           variant="permanent"
@@ -36,9 +40,11 @@ export default function App() {
             <ContainerList />
           </Box>
         </Drawer>
-        <Box component="main" sx={{ flexGrow: 1 }}>
+        <Stack component="main" sx={{ flexGrow: 1, flexShrink: 0 }}>
+          <LogFilters />
+          <Divider />
           <ContainerLogTable />
-        </Box>
+        </Stack>
       </Box>
     </ThemeProvider>
   );
