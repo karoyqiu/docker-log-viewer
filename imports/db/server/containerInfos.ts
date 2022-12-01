@@ -1,8 +1,8 @@
-import { Meteor } from 'meteor/meteor';
 import Docker from 'dockerode';
+import { Meteor } from 'meteor/meteor';
 import { CONTAINERINFOS_COLLECTION } from '../ContainerInfos';
 
-Meteor.publish('container-infos', async function () {
+Meteor.publish(CONTAINERINFOS_COLLECTION, async function () {
   const docker = new Docker();
   let published: string[] = [];
 
@@ -15,9 +15,13 @@ Meteor.publish('container-infos', async function () {
       current.push(container.Id);
 
       if (index === -1) {
-        this.added(CONTAINERINFOS_COLLECTION, container.Id, container);
+        this.added(CONTAINERINFOS_COLLECTION, container.Id, {
+          name: container.Names[0].substring(1),
+        });
       } else {
-        this.changed(CONTAINERINFOS_COLLECTION, container.Id, container);
+        this.changed(CONTAINERINFOS_COLLECTION, container.Id, {
+          name: container.Names[0].substring(1),
+        });
         published.splice(index, 1);
       }
     });

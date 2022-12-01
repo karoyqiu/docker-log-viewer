@@ -17,6 +17,7 @@
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.16",
     "dockerode": "^3.3.4",
+    "lodash": "^4.17.21",
     "meteor-node-stubs": "^1.2.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "@meteorjs/eslint-config-meteor": "^1.0.5",
     "@types/dockerode": "^3.3.14",
+    "@types/lodash": "^4.14.191",
     "@types/meteor": "^2.8.1",
     "@types/mocha": "^10.0.1",
     "@types/react": "^18.0.25",
