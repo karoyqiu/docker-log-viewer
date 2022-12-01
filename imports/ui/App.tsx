@@ -8,6 +8,7 @@ import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import React from 'react';
 import ContainerList from './ContainerList';
+import ContainerLogTable from './ContainerLogTable';
 
 const drawerWidth = 240;
 
@@ -42,10 +43,13 @@ export default function App() {
           }}
         >
           <Toolbar />
-          <ContainerList />
+          <Box sx={{ overflow: 'auto' }}>
+            <ContainerList />
+          </Box>
         </Drawer>
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-          Lalala...
+        <Box component="main" sx={{ flexGrow: 1 }}>
+          <Toolbar />
+          <ContainerLogTable />
         </Box>
       </Box>
     </ThemeProvider>

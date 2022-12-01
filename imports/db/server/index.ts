@@ -1,1 +1,2 @@
 import './containerInfos';
+import './containerLogs';

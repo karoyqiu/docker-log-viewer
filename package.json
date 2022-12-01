@@ -3,7 +3,7 @@
   "packageManager": "yarn@3.3.0",
   "private": true,
   "scripts": {
-    "start": "cross-env MONGO_URL=\"mongodb://192.168.0.104/docker-log-viewer\" meteor run --port 192.168.0.104:2080 --exclude-archs web.browser.legacy",
+    "start": "cross-env meteor run --port 192.168.0.104:2080 --exclude-archs web.browser.legacy",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "visualize": "meteor --production --extra-packages bundle-visualizer"
@@ -16,6 +16,7 @@
     "@fontsource/roboto-mono": "^4.5.8",
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.16",
+    "ansi-to-react": "^6.1.6",
     "dockerode": "^3.3.4",
     "lodash": "^4.17.21",
     "meteor-node-stubs": "^1.2.5",
