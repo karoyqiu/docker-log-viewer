@@ -17,7 +17,7 @@ export default function ContainerLogTable() {
   const logs = useFind(() => ContainerLogs.find(), []);
 
   return (
-    <TableContainer sx={{ width: '100%' }}>
+    <TableContainer sx={{ width: '100%', height: '100vh' }}>
       <Table stickyHeader>
         <TableHead>
           <TableRow>
