@@ -6,12 +6,12 @@ import { useFind, useSubscribe } from 'meteor/react-meteor-data';
 import React from 'react';
 import { useEntity } from 'simpler-state';
 import { ContainerInfos, CONTAINERINFOS_COLLECTION } from '../db/ContainerInfos';
-import { current, set } from '../entities/currentContainer';
+import currentContainer from '../entities/currentContainer';
 
 export default function ContainerList() {
   const isLoading = useSubscribe(CONTAINERINFOS_COLLECTION);
   const containers = useFind(() => ContainerInfos.find({}, { sort: { name: 1 } }), []);
-  const selected = useEntity(current);
+  const selected = useEntity(currentContainer);
 
   return (
     <List
@@ -30,7 +30,7 @@ export default function ContainerList() {
         <ListItemButton
           key={container._id}
           selected={selected === container._id}
-          onClick={() => set(container._id)}
+          onClick={() => currentContainer.set(container._id)}
         >
           <ListItemText primary={container.name} />
         </ListItemButton>

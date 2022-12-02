@@ -1,5 +1,5 @@
 import { entity } from 'simpler-state';
 
-export const current = entity('');
+const currentContainer = entity('');
 
-export const set = (value: string) => current.set(value);
+export default currentContainer;

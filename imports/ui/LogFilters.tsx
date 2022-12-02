@@ -1,21 +1,22 @@
 import Stack from '@mui/material/Stack';
-import React from 'react';
 import { AdapterLuxon } from '@mui/x-date-pickers/AdapterLuxon';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
-import TextField from '@mui/material/TextField';
+import React from 'react';
+import since from '../entities/since';
+import until from '../entities/until';
+import DateTimeEntityPicker from './DateTimeEntityPicker';
 
 export default function LogFilters() {
   return (
     <LocalizationProvider dateAdapter={AdapterLuxon}>
-      <Stack direction="row" sx={{ m: 1, mb: 0 }}>
-        <DateTimePicker
-          renderInput={(props) => <TextField {...props} variant="standard" />}
+      <Stack direction="row" spacing={1} sx={{ m: 1, mb: 0 }}>
+        <DateTimeEntityPicker
           label="Since"
-        // value={value}
-        // onChange={(newValue) => {
-        //   setValue(newValue);
-        // }}
+          entity={since}
+        />
+        <DateTimeEntityPicker
+          label="Until"
+          entity={until}
         />
       </Stack>
     </LocalizationProvider>

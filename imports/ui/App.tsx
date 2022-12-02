@@ -4,7 +4,6 @@ import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import Stack from '@mui/material/Stack';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import TextField from '@mui/material/TextField';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import React from 'react';
 import ContainerList from './ContainerList';
@@ -40,7 +39,7 @@ export default function App() {
             <ContainerList />
           </Box>
         </Drawer>
-        <Stack component="main" sx={{ flexGrow: 1, flexShrink: 0 }}>
+        <Stack component="main" sx={{ flexGrow: 1, flexShrink: 1 }}>
           <LogFilters />
           <Divider />
           <ContainerLogTable />

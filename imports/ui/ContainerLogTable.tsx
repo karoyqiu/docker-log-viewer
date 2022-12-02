@@ -9,11 +9,18 @@ import { useFind, useSubscribe } from 'meteor/react-meteor-data';
 import React from 'react';
 import { useEntity } from 'simpler-state';
 import { ContainerLogs, CONTAINERLOGS_COLLECTION } from '../db/ContainerLogs';
-import { current } from '../entities/currentContainer';
+import currentContainer from '../entities/currentContainer';
+import sinceEntity from '../entities/since';
+import untilEntity from '../entities/until';
 
 export default function ContainerLogTable() {
-  const containerId = useEntity(current);
-  const isLoading = useSubscribe(CONTAINERLOGS_COLLECTION, containerId);
+  const containerId = useEntity(currentContainer);
+  const since = useEntity(sinceEntity);
+  const until = useEntity(untilEntity);
+  const isLoading = useSubscribe(CONTAINERLOGS_COLLECTION, containerId, {
+    since: since?.valueOf(),
+    until: until?.valueOf(),
+  });
   const logs = useFind(() => ContainerLogs.find(), []);
 
   return (
